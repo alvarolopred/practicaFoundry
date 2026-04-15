@@ -8,9 +8,14 @@ from PIL import Image
 # Local caption pipeline will be loaded lazily to avoid heavy imports when unused
 local_caption_pipeline = None
 
-# Configuración tomada del notebook
-api_key = "4qfg9VMoJhqIMdzjYCpPxQFweU5bXa5V2IcDiCRjUslwr9f69liuJQQJ99CDACYeBjFXJ3w3AAAAACOGK8DX"
-base_url = "https://pruebauno.services.ai.azure.com/api/projects/projuno/openai/v1"
+import os
+from dotenv import load_dotenv
+
+# Cargar variables desde el archivo .env (busca en el directorio raíz)
+load_dotenv()
+
+api_key = os.getenv("AZURE_OPENAI_KEY") or os.getenv("KEY")
+base_url = os.getenv("AZURE_OPENAI_ENDPOINT") or os.getenv("BASE_URL")
 
 def describe_image(image_url: str) -> str:
     try:

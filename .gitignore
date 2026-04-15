@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.ipynb_checkpoints/
+.venv/
+venv/
+.vscode/
+.DS_Store
+*.jsonl
+!training_set.jsonl
+!validation_set.jsonl
