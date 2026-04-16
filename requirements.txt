@@ -7,3 +7,4 @@ kagglehub
 pillow
 transformers
 torch
+azure-search-documents
